@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #ff758c,
+        #ff7eb3,
+        #a18cd1,
+        #fbc2eb
+    );
+    overflow-x: hidden;
+}
+
+.birthday-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    animation: appear 1s ease;
+}
+
+.cake {
+    font-size: 75px;
+    animation: bounce 2s infinite;
+}
+
+.small-text {
+    margin: 15px 0;
+    color: #9b4d96;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: #ff4081;
+    font-size: clamp(30px, 7vw, 45px);
+    margin: 15px 0;
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    color: #8e44ad;
+    margin: 15px 0;
+}
+
+.message {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4081, #a64dff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+.hidden {
+    display: none;
+}
+
+#surpriseMessage {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff0f6;
+    animation: appear 0.8s ease;
+}
+
+#surpriseMessage p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.gift {
+    font-size: 65px;
+    margin: 15px;
+    animation: bounce 1s infinite;
+}
+
+.signature {
+    font-weight: bold;
+    color: #ff4081 !important;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #777;
+}
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 1;
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 15px;
+    pointer-events: none;
+    z-index: 5;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ffb3d1;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ff4081;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-card {
+        padding: 25px 18px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
